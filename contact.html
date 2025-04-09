@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Creative Clicks - Contact Us">
+  <meta name="keywords" content="video production, design, animation, marketing, contact">
+  <title>Creative Clicks - Contact Us</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#6366f1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --secondary: #8b5cf6;
+      --accent: #ec4899;
+      --dark: #1f2937;
+      --light: #f9fafb;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Image Protection */
+    img {
+      pointer-events: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Disable Selection */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Custom Scrollbar Styles */
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      border: 3px solid #f1f1f1;
+      transition: all 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      border: 2px solid #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: #f1f1f1;
+    }
+
+    /* Firefox Scrollbar */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) #f1f1f1;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform-origin: 0%;
+      z-index: 1000;
+      transition: transform 0.1s linear;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: #f8fafc;
+    }
+
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: var(--shadow);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary) !important;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand .logo-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .navbar-brand .logo-text::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover .logo-text::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .navbar-brand .logo-text span {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand:hover .logo-text span {
+      transform: translateY(-2px);
+    }
+
+    .navbar-brand .logo-text .web {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .navbar-brand .logo-text .sync {
+      color: var(--secondary);
+      font-weight: 800;
+    }
+
+    .navbar-brand .logo-text .zone {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem !important;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 1rem;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: calc(100% - 2rem);
+    }
+
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 150px 0 100px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1579547945413-497e1b99dac0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover;
+      opacity: 0.1;
+    }
+
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .contact-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .contact-hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 3rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-50px);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(99, 102, 241, 0.1);
+    }
+
+    .contact-form:hover {
+      transform: translateY(-55px);
+      box-shadow: 0 30px 60px -12px rgba(99, 102, 241, 0.2);
+    }
+
+    .form-control {
+      padding: 1.25rem;
+      border-radius: 1rem;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      height: auto;
+      background-color: #f8fafc;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+      transform: translateY(-2px);
+      background-color: white;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      background: white;
+      padding: 0 10px;
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .form-group.focused label {
+      color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .form-control:focus + label {
+      color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 1.25rem 2.5rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -10px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.5rem;
+    }
+
+    .form-message {
+      display: none;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background: rgba(37, 211, 102, 0.1);
+      color: #128C7E;
+      border: 1px solid rgba(37, 211, 102, 0.2);
+    }
+
+    .form-message.error {
+      background: rgba(236, 72, 153, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(236, 72, 153, 0.2);
+    }
+
+    .contact-info-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #e5e7eb;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(0);
+    }
+
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.3);
+    }
+
+    .contact-info-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-size: 1.75rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-info-card:hover .contact-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .contact-info-card:hover .contact-icon::before {
+      opacity: 1;
+    }
+
+    .contact-info-card:hover .contact-icon i {
+      transform: scale(1.1);
+    }
+
+    .contact-icon i {
+      position: relative;
+      z-index: 2;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-info-card h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--dark);
+      transition: all 0.3s ease;
+    }
+
+    .contact-info-card:hover h5 {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .contact-info-card p {
+      color: #6b7280;
+      margin-bottom: 0;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    .contact-info-card:hover p {
+      color: var(--dark);
+      transform: translateX(5px);
+    }
+
+    .map-container {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      height: 500px;
+      position: relative;
+    }
+
+    .map-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(20%);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      padding: 1.25rem 2.5rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -10px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-primary:hover::before {
+      opacity: 1;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 5rem 0 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      animation: borderAnimation 3s linear infinite;
+    }
+
+    .footer-logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      position: relative;
+    }
+
+    .footer-logo .logo-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-logo .logo-text::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-logo:hover .logo-text::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .footer-logo .logo-text span {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-logo:hover .logo-text span {
+      transform: translateY(-2px);
+    }
+
+    .footer-logo .logo-text .web {
+      color: white;
+      font-weight: 800;
+    }
+
+    .footer-logo .logo-text .sync {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .footer-logo .logo-text .zone {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .footer-links h5 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links h5::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .footer-links h5:hover {
+      transform: translateX(5px);
+    }
+
+    .footer-links h5:hover::after {
+      width: 60px;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(10px);
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin-right: 1rem;
+      color: white;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .social-links a i {
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-5px);
+    }
+
+    .social-links a:hover::before {
+      opacity: 1;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      color: #9ca3af;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .copyright::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      animation: borderAnimation 3s linear infinite;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 120px 0 60px;
+        min-height: 300px;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .contact-hero p {
+        font-size: 1.1rem;
+      }
+
+      .contact-form {
+        padding: 2rem;
+        transform: translateY(-30px);
+      }
+
+      .contact-info-card {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+
+      .map-container {
+        height: 350px;
+        margin-top: 2rem;
+      }
+
+      .form-control {
+        padding: 1rem;
+      }
+
+      .btn-primary {
+        padding: 1rem 2rem;
+        width: 100%;
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .footer-logo {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .contact-hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-form {
+        padding: 1.5rem;
+      }
+
+      .contact-info-card {
+        padding: 1.5rem;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+
+      .footer-logo {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Form Validation Styles */
+    .form-control {
+      border-color: #e5e7eb;
+      background-color: #f8fafc;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+      background-color: white;
+    }
+
+    .form-control.error {
+      border-color: #ef4444;
+      background-color: rgba(239, 68, 68, 0.05);
+    }
+
+    .form-control.error:focus {
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+    }
+
+    .form-control.valid {
+      border-color: #10b981;
+      background-color: rgba(16, 185, 129, 0.05);
+    }
+
+    .form-control.valid:focus {
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+    }
+
+    .form-message {
+      display: none;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background: rgba(37, 211, 102, 0.1);
+      color: #128C7E;
+      border: 1px solid rgba(37, 211, 102, 0.2);
+    }
+
+    .form-message.error {
+      background: rgba(236, 72, 153, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(236, 72, 153, 0.2);
+    }
+  </style>
+</head>
+<body oncontextmenu="return false">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-text">
+          <span class="web">Web</span>
+          <span class="sync">Sync</span>
+          <span class="zone">Zone</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="contact-hero-content" data-aos="fade-right">
+        <h1>Let's Create Something Amazing Together</h1>
+        <p>We're here to help bring your creative vision to life. Get in touch with us today and let's start your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="contact-form">
+            <h3 class="mb-4">Send us a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required pattern="[A-Za-z\s]{2,}">
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <label for="email">Email Address</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="subject" placeholder="Enter your mobile number" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric">
+                <label for="subject">Mobile Number</label>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              <div class="form-message" id="formMessage"></div>
+              <button type="submit" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span>Send via WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h5>Our Location</h5>
+                <p>Nadia, West Bengal, 123456</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <h5>Phone Number</h5>
+                <p>+91 9933049239</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h5>Email Address</h5>
+                <p>websynczone@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <h5>Working Hours</h5>
+                <p>Monday - Friday: 9AM - 6PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="map-container" data-aos="fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8530370989447!2d77.20985731508172!3d28.575082982441563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2a0a0a0a0a0%3A0x0!2zMjjCsDM0JzMwLjMiTiA3N8KwMTInNDEuNiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                allowfullscreen="" 
+                loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up">
+          <div class="footer-logo">
+            <span class="logo-text">
+              <span class="web">Web</span>
+              <span class="sync">Sync</span>
+              <span class="zone">Zone</span>
+            </span>
+          </div>
+          <p class="text-muted mb-4">Professional video production and design services to help your business stand out and grow.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="footer-links">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="index.html#services">Video Production</a></li>
+              <li><a href="index.html#services">Logo Design</a></li>
+              <li><a href="index.html#services">Banner Design</a></li>
+              <li><a href="index.html#services">Animation</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="footer-links">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="index.html#services">About Us</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="footer-links">
+            <h5>Contact Us</h5>
+            <ul class="text-muted">
+              <li class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Nadia, West Bengal</li>
+              <li class="mb-2"><i class="fas fa-phone mr-2"></i>+91 9933049239</li>
+              <li class="mb-2"><i class="fas fa-envelope mr-2"></i>websynczone@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="mb-0">&copy; 2023 Creative Clicks. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Navbar scroll effect
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('.navbar').addClass('scrolled');
+      } else {
+        $('.navbar').removeClass('scrolled');
+      }
+    });
+
+    // Close mobile menu when clicking outside
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.navbar-collapse, .navbar-toggler').length) {
+        $('.navbar-collapse').collapse('hide');
+      }
+    });
+
+    // Close mobile menu when clicking a link
+    $('.navbar-nav>li>a').on('click', function() {
+      $('.navbar-collapse').collapse('hide');
+    });
+
+    // Scroll Progress Bar Animation
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
+    });
+
+    // Smooth Scroll with Offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 100;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Contact Form WhatsApp Integration
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+      
+      // Reset all error states
+      [name, email, subject, message].forEach(input => {
+        input.classList.remove('error', 'valid');
+      });
+      
+      // Name validation (only letters and spaces)
+      const nameRegex = /^[A-Za-z\s]{2,}$/;
+      if (!nameRegex.test(name.value)) {
+        name.classList.add('error');
+        const formMessage = document.getElementById('formMessage');
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message error';
+        formMessage.textContent = 'Please enter a valid name (letters only)';
+        return;
+      } else {
+        name.classList.add('valid');
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value)) {
+        email.classList.add('error');
+        const formMessage = document.getElementById('formMessage');
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message error';
+        formMessage.textContent = 'Please enter a valid email address';
+        return;
+      } else {
+        email.classList.add('valid');
+      }
+
+      // Mobile number validation (10 digits)
+      const mobileRegex = /^[0-9]{10}$/;
+      if (!mobileRegex.test(subject.value)) {
+        subject.classList.add('error');
+        const formMessage = document.getElementById('formMessage');
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message error';
+        formMessage.textContent = 'Please enter a valid 10-digit mobile number';
+        return;
+      } else {
+        subject.classList.add('valid');
+      }
+      
+      // Format the message with only user input
+      const whatsappMessage = `*Name:* ${name.value}\n` +
+        `*Email:* ${email.value}\n` +
+        `*Mobile:* ${subject.value}\n` +
+        `*Message:* ${message.value}`;
+      
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappNumber = '919933049239';
+      
+      // Check if user is on mobile
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      // Show success message
+      const formMessage = document.getElementById('formMessage');
+      formMessage.style.display = 'block';
+      formMessage.className = 'form-message success';
+      
+      if (isMobile) {
+        // For mobile devices, open WhatsApp directly
+        formMessage.textContent = 'Opening WhatsApp...';
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        window.location.href = whatsappUrl;
+      } else {
+        // For desktop, show QR code or web.whatsapp.com link
+        formMessage.textContent = 'Opening WhatsApp Web...';
+        const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+        window.open(whatsappWebUrl, '_blank');
+      }
+      
+      // Reset form after a delay
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        formMessage.style.display = 'none';
+        [name, email, subject, message].forEach(input => {
+          input.classList.remove('error', 'valid');
+        });
+      }, 3000);
+    });
+
+    // Update input validation for name field
+    document.getElementById('name').addEventListener('input', function() {
+      const nameRegex = /^[A-Za-z\s]{2,}$/;
+      this.classList.remove('error', 'valid');
+      if (this.value) {
+        if (!nameRegex.test(this.value)) {
+          this.classList.add('error');
+          this.setCustomValidity('Please enter a valid name (letters only)');
+        } else {
+          this.classList.add('valid');
+          this.setCustomValidity('');
+        }
+      }
+    });
+
+    // Update input validation for mobile number field
+    document.getElementById('subject').addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+      const mobileRegex = /^[0-9]{10}$/;
+      this.classList.remove('error', 'valid');
+      if (this.value) {
+        if (!mobileRegex.test(this.value)) {
+          this.classList.add('error');
+          this.setCustomValidity('Please enter a valid 10-digit mobile number');
+        } else {
+          this.classList.add('valid');
+          this.setCustomValidity('');
+        }
+      }
+    });
+
+    // Add email validation
+    document.getElementById('email').addEventListener('input', function() {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      this.classList.remove('error', 'valid');
+      if (this.value) {
+        if (!emailRegex.test(this.value)) {
+          this.classList.add('error');
+          this.setCustomValidity('Please enter a valid email address');
+        } else {
+          this.classList.add('valid');
+          this.setCustomValidity('');
+        }
+      }
+    });
+
+    // Add WhatsApp button click handler
+    document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').dispatchEvent(new Event('submit'));
+    });
+
+    // Form field focus effects
+    document.querySelectorAll('.form-control').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+    });
+
+    // Disable zoom using keyboard
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '0')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable zoom using mouse wheel
+    document.addEventListener('wheel', function(e) {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        return false;
+      }
+    }, { passive: false });
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // Disable image dragging
+    document.querySelectorAll('img').forEach(function(img) {
+      img.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+      });
+    });
+  </script>
+</body>
+</html> 
